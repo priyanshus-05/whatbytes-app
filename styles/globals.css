@@ -1,0 +1,70 @@
+/* styles/globals.css */
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  .main-layout {
+    /* display: flex; */
+        margin-left: 210px; /* This ensures content starts after the sidebar */
+        padding: 20px;
+        width: calc(100% - 250px); /* Full width minus sidebar width */ 
+    
+  }
+  
+  nav.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #f8f8f8;
+  }
+  
+  /* .sidebar {
+    width: 200px;
+    background-color: #efefef;
+    padding: 20px;
+  } */
+  
+  main {
+    padding: 20px;
+  }
+/* Sidebar Styling */
+.sidebar {
+    width: 200px; /* Fixed width for the sidebar */
+    background-color: #f5f6f7;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Full height */
+    position: fixed; /* Fixed sidebar on the left side */
+    left: 0; /* Ensures it stays at the left */
+    top: 90px; /* Ensures it starts from the top */
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar ul li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px; /* Add space between each menu item */
+  }
+  
+  .sidebar ul li img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px; /* Spacing between icon and text */
+  }
+  
+  .sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: 500;
+  }
+  
+  .sidebar ul li a:hover {
+    color: #1e90ff; /* Change color on hover */
+  }
+  
