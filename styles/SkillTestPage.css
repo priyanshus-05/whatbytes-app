@@ -351,26 +351,26 @@
     font-size: 0.875rem;
     margin-top: 0.5rem;
   }
-  /* Media query for small mobile devices */
-@media (max-width: 480px) {
-  .skill-test-container {
-    padding: 10px; /* **Reduce padding for smaller screens** */
+  @media (max-width: 480px) {
+    .skill-test-container {
+      padding: 10px;
+    }
+  
+    .language-card, .quick-statistics, .comparison-graph-container, .syllabus-wise-analysis, .question-analysis {
+      padding: 10px; /* Reduce padding for mobile */
+      min-width: 300px; /* Prevent cards from being too narrow */
+    }
+  
+    .quick-statistics-title, .question-analysis h3 {
+      font-size: 16px; /* Adjust font size for smaller screens */
+    }
+  
+    .circular-progress-container {
+      width: 70px; /* Reduce size of circular progress bar */
+      height: 70px;
+    }
+  
+    .comparison-graph h3, .question-analysis h3 {
+      font-size: 1.2em; /* Adjust heading size */
+    }
   }
-
-  .question-analysis, .syllabus-wise-analysis, .language-card, .quick-statistics, .comparison-graph-container {
-    padding: 15px; /* **Reduce padding for content on small screens** */
-  }
-
-  .circular-progress-container {
-    width: 80px; /* **Make the progress bar smaller on mobile devices** */
-    height: 80px;
-  }
-
-  .update-button {
-    font-size: 12px; /* **Make button text smaller for mobile** */
-  }
-
-  .quick-statistics-title {
-    font-size: 16px; /* **Adjust title font size** */
-  }
-}
