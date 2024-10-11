@@ -1,86 +1,5 @@
-/* styles/SkillTestPage.css */
 
-/* .language-card {
-    border: 1px solid #ccc;
-    padding: 20px;
-    margin-bottom: 20px;
-  } */
-  
-  /* .quick-statistics {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    padding: 20px;
-  } */
-  
-  /* .progress-bar {
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    padding: 20px;
-  }
-  
-  .progress-bar label {
-    display: block;
-    margin-bottom: 5px;
-    border: 1px solid #ccc;
-    padding: 20px;
-  } */
-  
-  /* .comparison-graph, .question-analysis {
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    padding: 20px;
-  } */
- /* Navbar Styling */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center; /* Ensures vertical alignment of logo, text, and profile */
-    padding: 10px 20px;
-    background-color: #f8f8f8;
-    border-bottom: 1px solid #e5e5e5;
-  }
-  
-  /* Styling for logo and WhatBytes text */
-  .navbar .logo {
-    display: flex;
-    align-items: center; /* Ensures the logo and text are on the same line */
-  }
-  
-  .navbar .logo img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-right: 10px;
-  }
-  
-  .navbar .logo span {
-    font-weight: bold;
-    font-size: 18px;
-    color: #000;
-  }
-  
-  /* Styling for profile section (image and name) */
-  .navbar .profile {
-    display: flex;
-    align-items: center; /* Ensures the profile image and name are on the same line */
-  }
-  
-  .navbar .profile img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-right: 10px;
-  }
-  
-  .navbar .profile span {
-    font-weight: bold;
-    font-size: 18px;
-    color: #000;
-  }
+
 
   /* SkillTestPage.css */
 
@@ -222,39 +141,51 @@
   /* styles/SkillTestPage.css */
 
 /* * Adding a border radius and shadow similar to your example */
+/* Comparison Graph Styling */
 .comparison-graph-container {
-    padding: 20px;
-    border: 1px solid #e0e0e0;
-    border-radius: 10px; /* * */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* * */
-    background-color: #fff; /* White background for the card */
-    position: relative;
-    margin-top: 10px;
-  }
-  
-/* * Styling for the top-right icon */
-.comparison-graph-icon img {
-    width: 30px; /* * Adjust size */
-    height: 30px;
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  background-color: #ffffff; /* White background */
+  position: relative;
+  margin-top: 20px;
+  text-align: left; /* Center the text */
 }
 
-/* * Updated graph container */
 .comparison-graph h3 {
-    margin-bottom: 10px;
-    font-size: 1.2em;
-    font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 1.5em; /* Increase the size for a clearer title */
+  font-weight: bold;
+}
+
+.comparison-graph p {
+  margin-bottom: 20px; /* Space between the text and the graph */
+  font-size: 1.1em;
+  color: #666666; /* Use a softer gray for the text */
 }
 
 .chartjs-annotation-label {
-    font-size: 12px; /* Make the annotation smaller */
-    color: gray;
+  font-size: 12px;
+  color: gray;
 }
 
-/* * Adjusting chart axis labels */
 .comparison-graph-container .chart-axis-label {
-    font-size: 14px;
-    color: #666;
+  font-size: 14px;
+  color: #666;
 }
+
+/* Styling the percentile label */
+.percentile-label {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  font-weight: bold;
+  color: #333;
+}
+
 
 /* SkillTestPage.css */
 
@@ -291,45 +222,41 @@
 
 /* Question Analysis styling */
 .question-analysis {
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-    text-align: center; /* * Align the content to the center */
-    position: relative; /* * For positioning the target icon */
-    
-  }
-  
-  .question-analysis h3 {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
-  .question-analysis p {
-    font-size: 14px;
-    color: #666;
-    margin-bottom: 20px; /* * Added space between text and progress bar */
-  }
-  
-  /* * Style for the circular progress bar */
-  .question-analysis .CircularProgressbar {
-    margin: 0 auto; /* Center the progress bar */
-  }
-  
-  .question-analysis .CircularProgressbar-text {
-    font-size: 16px; /* * Adjust font size for the text inside the progress bar */
-    fill: #333; /* * Text color */
-  }
-  
-  /* * Position the target icon inside the progress bar */
-  .target-icon img {
-    position: absolute;
-    top: 45%; /* * Adjust as per the progress bar size */
-    left: 45%;
-    transform: translate(-50%, -50%); /* * Center the icon */
-  }
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center; /* Center all content */
+  position: relative; /* For positioning the target icon */
+}
+
+.question-analysis h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.question-analysis p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px; /* Space between text and progress bar */
+}
+
+/* Style for the circular progress bar */
+.circular-progress-container {
+  margin: 0 auto; /* Center the container */
+}
+
+.CircularProgressbar {
+  margin: 0 auto; /* Center the progress bar */
+}
+
+.CircularProgressbar-text {
+  font-size: 16px;
+  fill: #333;
+}
+
   /* SkillTestPage.css */
 /* ModalComponent.css */
 

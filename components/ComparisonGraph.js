@@ -1,18 +1,17 @@
-"use client"; // * Ensures this runs on the client side
+"use client";
 
 import React from 'react';
 import {
   Chart as ChartJS,
   LineElement,
   PointElement,
-  CategoryScale, // * Required for X-axis
-  LinearScale, // * Required for Y-axis
+  CategoryScale,
+  LinearScale,
   Tooltip,
   Legend
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
 
-// * Register the components for the chart
 ChartJS.register(
   LineElement,
   PointElement,
@@ -28,64 +27,86 @@ export default function ComparisonGraph({ percentile }) {
     datasets: [
       {
         label: 'Number of Students',
-        data: [10, 30, 50, 70, 90], // Dummy data, update as per requirement
-        borderColor: 'rgba(119, 83, 170, 1)', // * Changed the line color to match example
-        backgroundColor: 'rgba(119, 83, 170, 0.2)', // * Adjusted background for line area
-        pointRadius: 5,
-        pointHoverRadius: 8,
-        pointBackgroundColor: 'purple', // * Customized point color
-        fill: false,
-        tension: 0.4, // * This makes the line slightly curved
+        data: [5, 20, 50, 20, 5], // Adjusted to create a bell curve shape
+        borderColor: 'rgba(128, 90, 213, 1)', // Adjusted to match the purple in the image
+        backgroundColor: 'rgba(128, 90, 213, 0.1)',
+        pointRadius: 4,
+        pointHoverRadius: 6,
+        pointBackgroundColor: 'rgba(128, 90, 213, 1)',
+        fill: true,
+        tension: 0.4,
       },
     ],
   };
 
   const options = {
+    responsive: true,
+    maintainAspectRatio: false,
     scales: {
       x: {
-        title: {
+        grid: {
           display: true,
-          text: 'Percentile',
+          color: 'rgba(0, 0, 0, 0.1)',
+        },
+        ticks: {
+          font: {
+            size: 12,
+          },
         },
       },
       y: {
-        title: {
-          display: true,
-          text: 'Number of Students',
-        },
+        display: false,
       },
     },
     plugins: {
       legend: {
-        display: false, // * Hide the legend to match the reference image
+        display: false,
+      },
+      tooltip: {
+        enabled: false,
       },
     },
     elements: {
       line: {
-        borderWidth: 2, // * Adjust the line thickness
+        borderWidth: 2,
       },
       point: {
-        pointStyle: 'circle', // * Define point style as circle
+        pointStyle: 'circle',
       },
     },
   };
 
   return (
-    <div className="comparison-graph-container" style={{ position: 'relative' }}>
-      {/* Title and Graph Description */}
+    <div className="comparison-graph-container">
       <h3>Comparison Graph</h3>
       <p>
-      <strong>You scored {percentile}% percentile</strong> which is lower than the
-      average percentile 72% of all the engineers who took this assessment.
+        You scored <strong>{percentile}% percentile</strong> which is lower than the
+        average percentile 72% of all the engineers who took this assessment
       </p>
 
-      {/* Render the Line Chart */}
-      <Line data={data} options={options} />
-
-      {/* Graph Icon */}
-      {/* <div className="comparison-graph-icon" style={{ position: 'absolute', top: 10, right: 10 }}>
-        <img src="/chart.png" alt="Graph Icon" />
-      </div> */}
+      <div style={{ position: 'relative', height: '200px', marginTop: '20px' }}>
+        <Line data={data} options={options} />
+        <div 
+          style={{ 
+            position: 'absolute', 
+            top: 0, 
+            left: `${percentile}%`, 
+            height: '100%', 
+            borderLeft: '1px solid black',
+            pointerEvents: 'none'
+          }}
+        >
+          <span style={{ 
+            position: 'absolute', 
+            bottom: '-20px', 
+            left: '5px', 
+            fontSize: '12px',
+            whiteSpace: 'nowrap'
+          }}>
+            your percentile
+          </span>
+        </div>
+      </div>
     </div>
   );
 }

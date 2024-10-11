@@ -30,7 +30,7 @@ export default function SkillTestPage() {
       {/* Right Column */}
       <div className="right-column">
         <SyllabusWiseAnalysis />
-        <QuestionAnalysis correctAnswers={score} /> {/* **Pass updated score** */}
+        <QuestionAnalysis score={score} totalQuestions={15} />{/* **Pass updated score** */}
       </div>
     </div>
   );

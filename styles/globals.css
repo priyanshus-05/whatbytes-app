@@ -1,13 +1,18 @@
 /* styles/globals.css */
+* {
+  box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
+  padding-top: 70px; /* Account for the height of the fixed navbar */
+  margin: 0;
   }
   
   .main-layout {
-    /* display: flex; */
-        margin-left: 210px; /* This ensures content starts after the sidebar */
-        padding: 20px;
-        width: calc(100% - 250px); /* Full width minus sidebar width */ 
+    margin-left: 220px; /* Leave space for the sidebar */
+    padding: 20px;
+    max-width: calc(100vw - 220px); /* Ensure no overflow */
+    box-sizing: border-box; /* Include padding in width calculation */
     
   }
   
@@ -28,17 +33,22 @@ body {
     padding: 20px;
   }
 /* Sidebar Styling */
+/* Sidebar Styling */
 .sidebar {
-    width: 200px; /* Fixed width for the sidebar */
-    background-color: #f5f6f7;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    height: 100vh; /* Full height */
-    position: fixed; /* Fixed sidebar on the left side */
-    left: 0; /* Ensures it stays at the left */
-    top: 90px; /* Ensures it starts from the top */
-  }
+  width: 200px; /* Fixed width for the sidebar */
+  background-color: #f5f6f7;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 70px); /* Full height minus navbar height */
+  position: fixed; /* Keeps sidebar fixed as you scroll */
+  left: 0; /* Sidebar sticks to the left */
+  top: 70px; /* Start after the navbar */
+  overflow-y: auto; /* Adds scroll if content overflows */
+  z-index: 2; /* Ensure it's above the main content but below the navbar */
+
+}
+
   
   .sidebar ul {
     list-style: none;
@@ -67,4 +77,57 @@ body {
   .sidebar ul li a:hover {
     color: #1e90ff; /* Change color on hover */
   }
+   /* Navbar Styling */
+.navbar {
   
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #e5e5e5;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 3; /* Navbar stays on top of the sidebar */
+}
+
+/* Styling for logo and WhatBytes text */
+.navbar .logo {
+  display: flex;
+  align-items: center; /* Ensures the logo and text are on the same line */
+}
+
+.navbar .logo img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.navbar .logo span {
+  font-weight: bold;
+  font-size: 18px;
+  color: #000;
+}
+
+/* Styling for profile section (image and name) */
+.navbar .profile {
+  display: flex;
+  align-items: center; /* Ensures the profile image and name are on the same line */
+}
+
+.navbar .profile img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.navbar .profile span {
+  font-weight: bold;
+  font-size: 18px;
+  color: #000;
+}
