@@ -9,6 +9,7 @@
     justify-content: space-between;
     gap: 20px;
     padding: 20px;
+    flex-wrap: wrap;
   }
   
   /* Left column holds the Language Card, Quick Statistics, and Comparison Graph stacked vertically */
@@ -35,6 +36,17 @@
     padding: 20px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
   }
+
+  /* Media query for tablets and mobile views */
+@media (max-width: 768px) {
+  .left-column, .right-column {
+    width: 100%; /* **Make both columns full-width on mobile and tablet** */
+  }
+
+  .skill-test-container {
+    flex-direction: column; /* **Stack the columns vertically on smaller screens** */
+  }
+}
 
   /* LanguageCard.css */
 
@@ -339,4 +351,26 @@
     font-size: 0.875rem;
     margin-top: 0.5rem;
   }
-  
+  /* Media query for small mobile devices */
+@media (max-width: 480px) {
+  .skill-test-container {
+    padding: 10px; /* **Reduce padding for smaller screens** */
+  }
+
+  .question-analysis, .syllabus-wise-analysis, .language-card, .quick-statistics, .comparison-graph-container {
+    padding: 15px; /* **Reduce padding for content on small screens** */
+  }
+
+  .circular-progress-container {
+    width: 80px; /* **Make the progress bar smaller on mobile devices** */
+    height: 80px;
+  }
+
+  .update-button {
+    font-size: 12px; /* **Make button text smaller for mobile** */
+  }
+
+  .quick-statistics-title {
+    font-size: 16px; /* **Adjust title font size** */
+  }
+}
